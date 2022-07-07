@@ -1,5 +1,5 @@
 from functions.create_life_values_table import create_life_values_table
-
+from functions.ask_the_importance_of_values import ask_the_importance_of_values
 
 def find_life_values():
     print('Hello, I am coming to help you find your life values. \nPlease select the 10 most important life values based on the table below: \n')
@@ -14,7 +14,7 @@ def find_life_values():
         from two values randomly choosed. There are two rounds of the process.
     '''
     )
-    raw_result = compare_two_values()
+    raw_result = ask_the_importance_of_values()
     
     sort_result = _sort_values()
     sort_result = resort_values_if_same_order()
