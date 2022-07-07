@@ -1,0 +1,11 @@
+version: '2'
+services:
+  jupyter:
+    image: pachyderm/jupyterhub-pachyderm-user:1.1.0
+    ports:
+      - 8000:8888
+    container_name: jupyter
+    volumes:
+      - ./:/home/jovyan/work/
+    environment:
+      - JUPYTER_TOKEN=easy
