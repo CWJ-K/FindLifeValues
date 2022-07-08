@@ -12,7 +12,7 @@ def find_life_values():
     print('Type your 10 life values by this format: value1, value2, value3, ..., value10')
     ten_life_values = input('Your 10 most important life values: ')
     #check_ten_life_values(ten_life_values)
-    
+
     print('''Based on the 10 life values, you will be asked to select the most important values 
     from two values randomly chosen. There are two rounds of the process.
     '''

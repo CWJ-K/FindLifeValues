@@ -1,6 +1,12 @@
 import random
 
 
+def transform_values_to_list(ten_life_values):
+    results = list(ten_life_values.split(','))
+    cleaned_results = [result.strip() for result in results]
+    return cleaned_results
+
+
 def create_two_value_pairs(ten_life_values):
     
     results = []
@@ -33,7 +39,7 @@ def compare_two_pairs(two_value_pairs, ten_life_values):
 
 
 def ask_the_importance_of_values(ten_life_values):
-    
+    ten_life_values = transform_values_to_list(ten_life_values)
     two_value_pairs = create_two_value_pairs(ten_life_values)
     randomize_pairs(two_value_pairs)
     result = compare_two_pairs(two_value_pairs, ten_life_values)
