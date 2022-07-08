@@ -1,4 +1,6 @@
-def create_life_values_table():
+from typing import List
+
+def create_life_values_table() -> List:
     LIFEVALUES = [
         '公平', '敏感', '公正', '務實', '耐心', '專業', '獨立', '信任',
         '自律', '志願', '溫暖', '堅持', '能量', '誠實', '流行', '教育',
@@ -33,5 +35,7 @@ def create_life_values_table():
 
 
     life_values_table = ('').join(results)
+
     print(life_values_table)
+    
     return LIFEVALUES

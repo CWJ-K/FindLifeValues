@@ -5,7 +5,7 @@ from functions.ask_the_importance_of_values import ask_the_importance_of_values
 from functions.writer import Writer
 
 
-def find_life_values():
+def find_life_values() -> None:
     
     print(
         'Hello, I am coming to help you find your life values.\n',
