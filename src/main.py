@@ -1,9 +1,11 @@
 from functions.create_life_values_table import create_life_values_table
 from functions.ask_the_importance_of_values import ask_the_importance_of_values
 from functions.create_report import create_report
-
+from functions.resort_values_if_same_grades import resort_values_if_same_grades
 
 def find_life_values():
+    
+    
     print('Hello, I am coming to help you find your life values. \nPlease select the 10 most important life values based on the table below: \n')
     life_values_table = create_life_values_table()
     
@@ -11,17 +13,16 @@ def find_life_values():
     ten_life_values = input('Your 10 most important life values: ')
     #check_ten_life_values(ten_life_values)
     
-    print('''
-        Based on the 10 life values, you will be asked to select the most important values
-        from two values randomly choosed. There are two rounds of the process.
+    print('''Based on the 10 life values, you will be asked to select the most important values 
+    from two values randomly chosen. There are two rounds of the process.
     '''
     )
-    answers = ask_the_importance_of_values()
+    answers = ask_the_importance_of_values(ten_life_values)
     
-    sort_result = create_report(answers)
-    sort_result = resort_values_if_same_order()
-    final result = create_report()
-    print('it is your result')
+    sort_report = create_report(answers)
+    sort_report = resort_values_if_same_grades(sort_report)
+    
+    print('it is your result \n', sort_report)
     
     
     
