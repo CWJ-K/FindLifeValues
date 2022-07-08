@@ -3,8 +3,8 @@ import random
 
 
 class User:
-    def __init__(self):
-        self.responses = 'No Responses'
+    responses = 'No Responses'
+    responses_in_rounds = []
 
 
 class Inquirer:
@@ -108,5 +108,5 @@ class Inquirer:
             questions.pop(number)
         
         self.response_summary = response_summary
-        
+
         return self.response_summary
