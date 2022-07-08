@@ -1,8 +1,7 @@
 import time
 
-from functions.create_life_values_table import create_life_values_table
 from functions.writer import Writer
-from functions.inquirer import Inquirer
+from functions.consult import Inquirer, User
 
 def find_life_values() -> None:
     
@@ -14,12 +13,12 @@ def find_life_values() -> None:
     
     time.sleep(2)
 
-    create_life_values_table()
-    
+    inquirer = Inquirer()
+    inquirer.create_life_values_table()
+
     time.sleep(2)
     
-    print('Type in your 10 life values in the format of: value1, value2, value3, ..., value10')
-    responses = input('Your 10 most important life values are: ')
+    inquirer.ask_users_life_values_question()
 
     time.sleep(2)
     
@@ -34,8 +33,7 @@ def find_life_values() -> None:
 
     time.sleep(1)
 
-    inquirer = Inquirer()
-    inquirer.organize_user_responses(responses)
+    inquirer.organize_user_responses(User.responses)
     inquirer.make_comparison_questions()
     inquirer.ask_users_comparison_questions()
     
