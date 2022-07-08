@@ -1,7 +1,7 @@
 from typing import List
 
 def create_life_values_table() -> List:
-    LIFEVALUES = [
+    LIFE_VALUES = [
         '公平', '敏感', '公正', '務實', '耐心', '專業', '獨立', '信任',
         '自律', '志願', '溫暖', '堅持', '能量', '誠實', '流行', '教育',
         '利他', '名氣', '安全', '穩定', '友誼', '強烈', '希望', '無懼',
@@ -14,28 +14,28 @@ def create_life_values_table() -> List:
         '平安', '滿足', '愛', '創新', '同情', '速度', '高貴', '影響力',
     ]
     
-    results = []
+    life_values_table = []
     break_ = 1
-    for value in LIFEVALUES:
+    for value in LIFE_VALUES:
 
         if break_ == 8:
             if len(value) == 3:
-                result =  value + '| \n'
+                row =  value + '| \n'
             else:
-                result = '  ' + value + '| \n' 
+                row = '  ' + value + '| \n' 
             break_ = 1
         else:
             if len(value) == 1:
-                result = '    '+ value + '|'
+                row = '    '+ value + '|'
                 
             else:
-                result = '  ' + value + '|'
+                row = '  ' + value + '|'
             break_ += 1
-        results.append(result)
+        life_values_table.append(row)
 
 
-    life_values_table = ('').join(results)
+    life_values_table = ('').join(life_values_table)
 
     print(life_values_table)
     
-    return LIFEVALUES
+    return LIFE_VALUES
