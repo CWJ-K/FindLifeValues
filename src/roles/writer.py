@@ -1,7 +1,6 @@
 from typing import Union
 import pandas as pd
 from collections import Counter
-from sklearn.metrics.pairwise import cosine_similarity
 
 class Writer:
     def __init__(self):
@@ -64,10 +63,12 @@ class Writer:
         round_one_word_vector = [round_one_word_occurrency.get(word, 0) for word in all_words]
         round_two_word_vector = [round_two_word_occurrency.get(word, 0) for word in all_words]
         
-        cosine = (
-            round(cosine_similarity([round_one_word_vector], [round_two_word_vector])[0][0], 2)
-        )
-                
+        len_round_one  = sum(vector*vector for vector in round_one_word_vector) ** 0.5
+        len_round_two  = sum(vector*vector for vector in round_two_word_vector) ** 0.5
+
+        dot = sum(vector_one*vector_two for vector_one, vector_two in zip(round_one_word_vector, round_two_word_vector)) 
+
+        cosine = round(dot / (len_round_one * len_round_two), 2)
         return cosine
 
     def make_similarity_report(self, results) -> Union[pd.DataFrame, int]:
