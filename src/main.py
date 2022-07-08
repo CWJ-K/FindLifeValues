@@ -54,14 +54,14 @@ def find_life_values() -> None:
         print(f'{current_round} finish!')
         current_round += 1
 
+    
+    report, similarity = writer.make_similarity_report(User.responses_in_rounds)
+
     print(
-        'Your results:\n',
-        f'Round 1: {User.responses_in_rounds[0]}\n',
-        f'Round 2: {User.responses_in_rounds[1]}',
-
+        'Below is your results of the two rounds (top-> the most important)',
+        f'the similarity of the two rounds is: {similarity}\n',
+        report
     )
-
-    #print('the similarity of the two rounds. below is the same values')
 
 
 if __name__ == '__main__':
