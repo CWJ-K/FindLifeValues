@@ -1,7 +1,7 @@
 import time
 
-from functions.writer import Writer
-from functions.consult import Inquirer, User
+from roles.writer import Writer
+from roles.consult import Inquirer, User
 
 def find_life_values() -> None:
     
