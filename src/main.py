@@ -51,7 +51,7 @@ def find_life_values() -> None:
         
         User.responses_in_rounds.append(list(writer.report['Life Value']))
 
-        print(f'{current_round} finish!')
+        print(f'Round {current_round} finish!')
         current_round += 1
 
     
@@ -63,6 +63,9 @@ def find_life_values() -> None:
         report
     )
 
+    
 
 if __name__ == '__main__':
     find_life_values()
+
+    time.sleep(600)
